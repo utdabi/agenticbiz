@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — PromptMate</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body class="product">
+
+    <header>
+      <div class="header-inner">
+        <img class="icon" src="../assets/icons/promptmate-1.png" alt="PromptMate icon">
+        <div>
+          <div class="site-name">PromptMate</div>
+          <div class="site-label">Privacy Policy</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1>Privacy Policy</h1>
+      <p class="effective">Effective date: May 17, 2026 &nbsp;·&nbsp; Applies to the PromptMate browser extension for Chrome and Firefox.</p>
+
+      <div class="tldr">
+        <div class="tldr-title">The short version</div>
+        <ul>
+          <li>We collect <strong>nothing</strong>. No accounts, no analytics, no telemetry.</li>
+          <li>All your data (PII terms, prompts, settings) stays on your device in browser storage.</li>
+          <li>When you use the Prompt Enhancer, your text goes directly from your browser to Google's Gemini API — it never passes through our servers.</li>
+          <li>Uninstalling the extension deletes everything.</li>
+        </ul>
+      </div>
+
+      <h2>1. Who we are</h2>
+      <p>PromptMate is a browser extension developed and maintained as an independent project. We do not operate servers that process or store user data.</p>
+
+      <h2>2. What data is stored — and where</h2>
+      <p>PromptMate stores the following data exclusively in your browser's local extension storage (<code>chrome.storage.local</code>). This storage is local to your device and is not accessible to us or any third party.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Purpose</th>
+            <th>Leaves your device?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Toggle states (masking on/off, enhancer on/off)</td>
+            <td>Remember your preferences</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Custom PII terms</td>
+            <td>Used locally to mask text before paste</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Prompt library</td>
+            <td>Your saved reusable prompts</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Enhancement template</td>
+            <td>Your customised system prompt for Gemini</td>
+            <td>No — except as part of Gemini API calls you initiate</td>
+          </tr>
+          <tr>
+            <td>Allowed sites list</td>
+            <td>Controls which domains PII masking is active on</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Gemini API key</td>
+            <td>Authenticates requests to Google's Gemini API</td>
+            <td>Only to Google (generativelanguage.googleapis.com) when you trigger enhancement</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. The Prompt Enhancer and Google Gemini <span class="tag">Third party</span></h2>
+      <p>If you choose to use the Prompt Enhancer feature, you supply your own Gemini API key. When you right-click and select "Enhance prompt", your browser sends a request containing:</p>
+      <ul>
+        <li>The text from the active input field</li>
+        <li>Your enhancement template</li>
+        <li>Your API key (as a URL parameter, per Google's API design)</li>
+      </ul>
+      <p>This request goes directly from your browser to <strong>Google's Gemini API</strong> (<code>generativelanguage.googleapis.com</code>). It does not pass through any PromptMate infrastructure. Google's handling of this data is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> and the <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini API Terms of Service</a>.</p>
+      <p>The Prompt Enhancer is entirely opt-in and requires you to provide your own API key. You can disable it at any time in settings.</p>
+
+      <h2>4. PII masking is entirely local</h2>
+      <p>The PII masking feature operates exclusively within your browser. Text is processed by the content script running on the page — no data is sent anywhere. Your custom PII terms never leave your device.</p>
+
+      <h2>5. No analytics or tracking</h2>
+      <p>PromptMate does not include analytics, crash reporting, or any form of usage tracking. We have no visibility into how, when, or where you use the extension.</p>
+
+      <h2>6. Permissions we request and why</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why it's needed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>storage</code></td>
+            <td>Save your settings, PII terms, and prompt library locally on your device</td>
+          </tr>
+          <tr>
+            <td><code>contextMenus</code></td>
+            <td>Add the right-click "Enhance prompt" menu item</td>
+          </tr>
+          <tr>
+            <td><code>&lt;all_urls&gt;</code> (content script)</td>
+            <td>Run the PII masking and prompt insertion features on any website you visit — the extension cannot function if restricted to specific domains</td>
+          </tr>
+          <tr>
+            <td><code>generativelanguage.googleapis.com</code></td>
+            <td>Allow the background service worker to call the Gemini API on your behalf when you trigger enhancement</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>7. Data retention and deletion</h2>
+      <p>All data stored by PromptMate is retained only in your browser's local storage. You can delete it at any time by:</p>
+      <ul>
+        <li>Clearing your custom PII terms or prompt library from the Settings page, or</li>
+        <li>Uninstalling the extension — this permanently removes all locally stored data</li>
+      </ul>
+
+      <h2>8. Children's privacy</h2>
+      <p>PromptMate is not directed at children under the age of 13 and we do not knowingly collect any personal information from children.</p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>If this policy changes materially, we will update the effective date above and, where possible, note the change in the extension's release notes. Continued use of the extension after a policy update constitutes acceptance of the revised policy.</p>
+
+      <h2>10. Contact</h2>
+      <div class="contact-panel">
+        <strong>Questions or concerns?</strong>
+        Email us at <a href="mailto:hello@agenticbiz.dev">hello@agenticbiz.dev</a>. We aim to respond within 5 business days.
+      </div>
+    </main>
+
+    <footer>
+      © AgenticBiz — <span class="current-year"></span>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+
+  </body>
+</html>

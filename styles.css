@@ -1,0 +1,90 @@
+/* Shared minimal styles for product portfolio */
+:root{
+  /* Unified neutral palette (leaning toward the product page look) */
+  --bg:#f8fafc; --fg:#0f172a; --muted:#64748b; --accent:#2563eb;
+  --card:#ffffff; --radius:12px; --card-border: rgba(2,6,23,0.04); --shadow: rgba(2,6,23,0.06);
+}
+*{box-sizing:border-box}
+.body-font{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+body{font-family:var(--body-font,Inter),Segoe UI,Arial,sans-serif;margin:0;background:var(--bg);color:var(--fg);line-height:1.45;-webkit-font-smoothing:antialiased}
+.container{max-width:980px;margin:28px auto;padding:0 16px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+header h1{font-size:1.25rem;margin:0;font-weight:700}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);padding:18px;border-radius:var(--radius);border:1px solid var(--card-border);box-shadow:0 8px 30px var(--shadow)}
+.card img.icon{width:48px;height:48px;object-fit:contain;border-radius:8px}
+.icon{width:48px;height:48px;object-fit:contain;border-radius:8px}
+.card h2{font-size:1rem;margin:8px 0}
+.card p{margin:0;color:var(--muted);font-size:0.95rem}
+.screenshot{width:100%;border-radius:8px;margin-top:12px;display:block}
+.links{margin-top:12px}
+.links a{color:var(--accent);text-decoration:none;margin-right:12px}
+footer{margin:40px 0 80px;color:var(--muted);font-size:0.9rem;text-align:center}
+/* product page */
+.hero{display:flex;gap:20px;align-items:center}
+.hero .info{flex:1}
+.hero img{max-width:320px;width:100%;border-radius:8px}
+@media(max-width:720px){.hero{flex-direction:column}.hero img{max-width:100%}}
+
+/* Product page styles (scoped to pages that set <body class="product">) */
+.product{
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --text: #0f172a;
+  --card-border: rgba(2,6,23,0.04);
+  --shadow: rgba(2,6,23,0.06);
+  background: linear-gradient(180deg,#ffffff 0%,var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin:0;
+}
+@media (prefers-color-scheme: dark) {
+  .product{ --bg: #0f1724; --card: #0b1220; --muted: #94a3b8; --accent:#2563eb; --text:#e6eef8; --card-border: rgba(255,255,255,0.03); --shadow: rgba(2,6,23,0.6); }
+}
+
+.product .wrap{ max-width:980px; margin:28px auto; padding:24px; }
+.product header{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.product header h1{ margin:0; font-size:20px; letter-spacing:-0.02em; }
+.product nav a{ color:var(--muted); text-decoration:none; font-size:14px; }
+.product .hero{ display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:center; margin-top:18px; }
+.product .card{ background:var(--card); border-radius:12px; padding:20px; border:1px solid var(--card-border); box-shadow:0 8px 30px var(--shadow); }
+.product .hero h2{ margin:0 0 8px; font-size:22px; }
+.product .hero p{ margin:0 0 12px; color:var(--muted); line-height:1.45; }
+.product .cta{ display:flex; gap:10px; flex-wrap:wrap; }
+.product .btn{ display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700; font-size:14px; }
+.product .btn-primary{ background:var(--accent); color:white; }
+.product .btn-ghost{ background:transparent; color:var(--text); border:1px solid rgba(15,23,42,0.06); }
+.product .screenshot{ width:100%; border-radius:8px; display:block; box-shadow:0 8px 30px var(--shadow); }
+.product .features{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:18px; }
+.product .feature{ padding:12px; background:transparent; border-radius:10px; }
+.product .feature h4{ margin:0 0 6px; font-size:14px; }
+.product footer{ margin-top:22px; color:var(--muted); font-size:13px; }
+@media (max-width:880px){ .product .hero{ grid-template-columns:1fr; } .product .features{ grid-template-columns:1fr; } .product .hero img{ width:100%; max-width:480px; margin:0 auto; } }
+
+/* Privacy-style components (scoped) */
+.product .header-inner{ max-width:760px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:14px; }
+.product .logo-mark{ width:36px; height:36px; background:linear-gradient(135deg,#34d399,#0f766e); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:#fff; flex-shrink:0; }
+.product .site-name{ font-weight:800; font-size:18px; }
+.product .site-label{ font-size:13px; color:var(--muted); margin-top:1px; }
+.product main{ max-width:760px; margin:0 auto; padding:48px 24px 80px; }
+.product h1{ font-size:28px; font-weight:800; margin:0 0 6px; }
+.product .effective{ font-size:13px; color:var(--muted); margin:0 0 40px; }
+.product .tldr{ background:var(--card); border:1px solid var(--card-border); border-left:4px solid #34d399; border-radius:14px; padding:20px 24px; margin-bottom:40px; box-shadow:0 4px 24px rgba(0,0,0,0.06); }
+.product .tldr-title{ font-weight:700; font-size:15px; margin-bottom:10px; color:#059669; }
+.product .tldr ul{ margin:0; padding-left:20px; }
+.product .tldr li{ margin-bottom:6px; font-size:14px; }
+.product h2{ font-size:17px; font-weight:700; margin:36px 0 10px; padding-bottom:8px; border-bottom:1px solid var(--card-border); }
+.product p{ margin:0 0 14px; font-size:15px; color:var(--text); }
+.product ul{ padding-left:22px; margin:0 0 14px; }
+.product li{ font-size:15px; margin-bottom:6px; }
+.product .tag{ display:inline-block; background:rgba(37,99,235,0.15); color:var(--accent); font-size:12px; font-weight:600; padding:2px 8px; border-radius:6px; margin-left:6px; vertical-align:middle; }
+.product table{ width:100%; border-collapse:collapse; font-size:14px; margin:16px 0 24px; }
+.product th{ text-align:left; padding:10px 14px; background:var(--card); color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid var(--card-border); }
+.product td{ padding:10px 14px; border-bottom:1px solid var(--card-border); vertical-align:top; }
+.product tr:nth-child(even) td{ background: rgba(255,255,255,0.02); }
+.product a{ color:var(--accent); }
+.product .contact-panel{ background:var(--card); border:1px solid var(--card-border); border-radius:14px; padding:20px 24px; margin-top:40px; font-size:14px; }
+
